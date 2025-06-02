@@ -23,9 +23,11 @@ const products=[{
     },
     priceCents: 799
 }];
+
 let productsHTML='';
+
 products.forEach((product) => {
-    productsHTML+= `
+    productsHTML += `
     <div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
@@ -38,14 +40,14 @@ products.forEach((product) => {
 
           <div class="product-rating-container">
             <img class="product-rating-stars"
-              src="images/ratings/rating-${product.rating.stars}.png">
+              src="images/ratings/rating-${product.rating.stars * 10}.png">
             <div class="product-rating-count link-primary">
               ${product.rating.count}
             </div>
           </div>
 
           <div class="product-price">
-            $${product.priceCents}
+            $${(product.priceCents / 100).toFixed(2)}
           </div>
 
           <div class="product-quantity-container">
